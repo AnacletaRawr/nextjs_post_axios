@@ -1,0 +1,133 @@
+.form {
+  margin: auto;
+  width: 100%;
+}
+.card {
+  width: 400px;
+  max-width: 98%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+.card_title,
+.card_action {
+  font-size: 20px;
+  height: 60px;
+  line-height: 40px;
+  padding: 10px 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.7);
+}
+.card_title {
+  border-bottom: 1px solid #ddd;
+}
+.card_action {
+  text-align: right;
+  border-top: 1px solid #ddd;
+}
+
+.btn {
+  border: none;
+  background-color: var(--success-color);
+  padding: 0 25px;
+  font-size: 14px;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  height: 40px;
+  line-height: 40px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* On mouse-over */
+.btn:hover {
+  background: var(--successhover-color);
+}
+
+.card_text {
+  margin: auto;
+  width: 80%;
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form_group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+}
+
+.form_field {
+  font-family: inherit;
+  width: 100%;
+  font-size: 16px;
+  padding: 7px 15px;
+  background: transparent;
+  transition: border-color 0.2s;
+  margin: 0 0 1em 0;
+  border: 1px solid #818181;
+  resize: none;
+  outline: none;
+  border-radius: 3px;
+}
+
+.form_group input[type="file"]::file-selector-button {
+  margin-right: 20px;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.form_group input[type="text"],
+.form_group input[type="email"],
+.form_group input[type="password"],
+.form_group input[type="file"] {
+  height: 52px;
+}
+
+.form_field::placeholder {
+  color: transparent;
+}
+
+.form_field:placeholder-shown ~ .form_label {
+  font-size: 16px;
+  cursor: text;
+  top: 1.7em;
+}
+
+.form_label,
+.form_field:focus ~ .form_label {
+  position: absolute;
+  height: 20px;
+  top: 6px;
+  left: 8px;
+  padding: 3px 3px 0 3px;
+  display: block;
+  transition: 0.2s;
+  font-size: 12px;
+  color: #9b9b9b;
+  background: linear-gradient(to top, transparent, #fff, #fff);
+}
+
+.form_field:focus ~ .form_label {
+  color: var(--error-color);
+}
+
+.form_field:focus {
+  border: 1px solid var(--error-color);
+}
+
+.form_field:valid {
+  border-color: var(--success-color);
+}
+
+.form_field:valid ~ .form_label {
+  color: var(--success-color);
+}

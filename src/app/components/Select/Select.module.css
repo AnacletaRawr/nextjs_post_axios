@@ -1,0 +1,146 @@
+.custom_select {
+  border: 1px solid #818181;
+  border-radius: 3px;
+  margin: 0 0 1.5em 0;
+  height: 52px;
+  max-height: 52px;
+}
+
+.no_selected {
+  border: 1px solid var(--error-color);
+}
+
+.selected {
+  border: 1px solid var(--success-color);
+}
+
+.custom_select {
+  position: relative;
+}
+
+.custom_select[open] {
+  z-index: 1;
+}
+
+.custom_select[open] .summary:before {
+  content: "";
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.custom_select[open] .summary:after {
+  transform: rotate(-45deg) translate(0%, 0%);
+}
+.summary {
+  font-size: 16px;
+  padding: 15px 20px 15px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  list-style: none;
+  height: 100%;
+}
+
+.summary::-webkit-details-marker {
+  display: none;
+}
+
+.list {
+  width: 100%;
+  background: #ddd;
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.list li {
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+}
+.list li :hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.list li:first-child {
+  padding-top: 0;
+}
+
+.list li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+.list li label {
+  width: 100%;
+  display: flex;
+  cursor: pointer;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.list li label span {
+  --display: none;
+  display: var(--display);
+  width: 1rem;
+  height: 1rem;
+  border: 1px solid #727272;
+  border-radius: 3px;
+}
+
+/* FAKE SELECT */
+.list {
+  counter-reset: labels;
+}
+
+.summary {
+  counter-reset: radios;
+}
+
+.summary:before {
+  content: var(--selection);
+}
+
+.summary:after {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  right: 20px;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-bottom: 1px solid currentColor;
+  border-left: 1px solid currentColor;
+  border-bottom-left-radius: 2px;
+  transform: rotate(45deg) translate(50%, 0%);
+  transform-origin: center center;
+  transition: transform ease-in-out 100ms;
+}
+
+.summary:focus {
+  outline: none;
+}
+
+.summary input[type="radio"] {
+  counter-increment: radios;
+  appearance: none;
+  display: none;
+}
+
+.summary input[type="radio"]:checked {
+  display: inline;
+  --display: block;
+}
+
+.summary input[type="radio"]:after {
+  content: attr(title);
+  display: inline;
+  font-size: 16px;
+}
