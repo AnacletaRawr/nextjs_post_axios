@@ -88,7 +88,9 @@
 .form_group input[type="text"],
 .form_group input[type="email"],
 .form_group input[type="password"],
-.form_group input[type="file"] {
+.form_group input[type="file"],
+.form_group input[type="tel"],
+.form_group input[type="number"] {
   height: 52px;
 }
 

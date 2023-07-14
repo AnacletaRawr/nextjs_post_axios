@@ -24,6 +24,18 @@ const links = [
     label: "Login",
     route: "/Login",
   },
+  {
+    label: "Productos",
+    route: "/Productos",
+  },
+  {
+    label: "Productos SSR",
+    route: "/Productosssr",
+  },
+  {
+    label: "Agregar producto",
+    route: "/Nuevoproducto",
+  },
 ];
 
 export function Navigation() {

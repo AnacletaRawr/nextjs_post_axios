@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "axios-hooks": "^4.0.0",
     "next": "13.4.7",
     "next-auth": "^0.0.0-pr.6777.c5550344",
     "react": "18.2.0",
