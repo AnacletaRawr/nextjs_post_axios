@@ -33,8 +33,12 @@ const links = [
     route: "/Productosssr",
   },
   {
-    label: "Agregar producto",
+    label: "Add",
     route: "/Nuevoproducto",
+  },
+  {
+    label: "Add",
+    route: "/Add_fetch",
   },
 ];
 
